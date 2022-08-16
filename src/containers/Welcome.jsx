@@ -3,7 +3,8 @@ import React from 'react'
 const Welcome = () => {
   return (
     <div>
-        <h1>Welcome to our MTG info page</h1>
+        <img src="https://crystal-cdn3.crystalcommerce.com/photos/6330564/splashBanner_magic.jpg" alt="Magic banner" />
+        <h1>Welcome to our MTG card gallery</h1>
     </div>
   )
 }

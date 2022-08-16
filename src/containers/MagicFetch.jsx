@@ -8,27 +8,28 @@ const MagicFetch = () => {
     const [cardArr, setCardArr] = useState([])
     const [color, setColor] = useState('')
     const [type, setType] = useState('')
+    const [rarity, setRarity] = useState('')
     const [isLoading, setIsLoading] = useState(true)
     
     useEffect(() => {
         setIsLoading(true)
-        getMagic(color, type)
+        getMagic(color, type, rarity)
         .then(({cards}) => {
             setCardArr(cards)
             setIsLoading(false)
         })
-    }, [color, type])
+    }, [color, type, rarity])
 
     if(isLoading)return (
         <div>
-            <FilterButtons setColor={setColor} setType={setType}/>
+            <FilterButtons setColor={setColor} setType={setType} setRarity={setRarity}/>
             <LoadingImage />
         </div>
     )
 
     return (
         <div>
-            <FilterButtons setColor={setColor} setType={setType}/>
+            <FilterButtons setColor={setColor} setType={setType} setRarity={setRarity}/>
             <ListCards cardArr={cardArr}/>
         </div>
     )
