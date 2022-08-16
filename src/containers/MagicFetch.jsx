@@ -22,7 +22,7 @@ const MagicFetch = () => {
     if(isLoading)return (
         <div>
             <FilterButtons setColor={setColor} setType={setType}/>
-            <LoadingImage isLoading={isLoading}/>
+            <LoadingImage />
         </div>
     )
 
