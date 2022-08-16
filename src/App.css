@@ -2,23 +2,26 @@
 
 * {
     font-family: Aboreto;
+    text-align: center;
 }
 
 h1 {
     font-weight: 700;
 }
 
-#card-list-container , ul {
+ul {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
     justify-content: center;
     grid-template-rows: auto;
     list-style: none;
+    padding: 0;
+    width: 100%;
 }
 
 .card-item {
     border-bottom: 3px solid black;
-    padding: 0 15px 0 15px;
+    padding: 30px 15px 30px 15px;
 }
 
 .card-text-name {
@@ -29,4 +32,39 @@ h1 {
 
 .card-text-info {
     text-align: center;
+}
+
+#loading-image {
+    margin-top: 40px;
+    border-radius: 4%;
+    width: 70%;
+}
+
+#loading-text {
+    font-size: 4rem;
+    color: black;
+}
+
+#dropdowns-container {
+    display: flex;
+    justify-content: center;
+}
+
+.dropdowns {
+    margin: 0 10px;
+}
+
+@media only screen and (max-width: 600px) {
+    ul {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    
+    .card-item img{
+        width: 75%;
+    }
+
+    .card-item p{
+        font-size: 25px;
+    }
 }

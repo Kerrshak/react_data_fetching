@@ -12,25 +12,29 @@ export const FilterButtons = ({setColor, setType}) => {
     }
 
   return (
-    <div>
-        <label htmlFor="color">Color: </label>
-        <select onChange={handleChangeColor} name="color" id="color">
-            <option value="">Select color</option>
-            <option value="White">White</option>
-            <option value="Black">Black</option>
-            <option value="Red">Red</option>
-            <option value="Blue">Blue</option>
-            <option value="Green">Green</option>
-        </select>
-        <label htmlFor="type">Type: </label>
-        <select onChange={handleChangeType} name="type" id="type">
-            <option value="">Select type</option>
-            <option value="Creature">Creature</option>
-            <option value="Planeswalker">Planeswalker</option>
-            <option value="Land">Land</option>
-            <option value="Sorcery">Sorcery</option>
-            <option value="Instant">Instant</option>
-        </select>
+    <div id='dropdowns-container'>
+        <div className='dropdowns'>
+            <label htmlFor="color">Color: </label>
+            <select onChange={handleChangeColor} name="color" id="color">
+                <option value="">Select color</option>
+                <option value="White">White</option>
+                <option value="Black">Black</option>
+                <option value="Red">Red</option>
+                <option value="Blue">Blue</option>
+                <option value="Green">Green</option>
+            </select>
+        </div>
+        <div className='dropdowns'>
+            <label htmlFor="type">Type: </label>
+            <select onChange={handleChangeType} name="type" id="type">
+                <option value="">Select type</option>
+                <option value="Creature">Creature</option>
+                <option value="Planeswalker">Planeswalker</option>
+                <option value="Land">Land</option>
+                <option value="Sorcery">Sorcery</option>
+                <option value="Instant">Instant</option>
+            </select>
+        </div>
     </div>
   )
 }
