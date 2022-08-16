@@ -2,21 +2,33 @@ import React, { useState, useEffect} from 'react'
 import {getMagic} from '../api'
 import {ListCards} from './ListCards'
 import {FilterButtons} from './FilterButtons'
+import {LoadingImage} from './LoadingImage'
 
 const MagicFetch = () => {
     const [cardArr, setCardArr] = useState([])
-    const [color, setColor] = useState()
+    const [color, setColor] = useState('')
+    const [type, setType] = useState('')
+    const [isLoading, setIsLoading] = useState(true)
     
     useEffect(() => {
-        getMagic()
+        setIsLoading(true)
+        getMagic(color, type)
         .then(({cards}) => {
             setCardArr(cards)
+            setIsLoading(false)
         })
-    }, [color])
+    }, [color, type])
+
+    if(isLoading)return (
+        <div>
+            <FilterButtons setColor={setColor} setType={setType}/>
+            <LoadingImage isLoading={isLoading}/>
+        </div>
+    )
 
     return (
         <div>
-            <FilterButtons setColor={setColor}/>
+            <FilterButtons setColor={setColor} setType={setType}/>
             <ListCards cardArr={cardArr}/>
         </div>
     )
